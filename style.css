@@ -330,13 +330,159 @@ footer{
 .page-title h1{
     font-size:2rem;
 }
-<div class="small-gallery">
 
-<img src="open1.jpg">
+}
+/* HOME IMAGE SLIDER */
 
-<img src="play1.jpg">
+.hero-slider{
+    width:100%;
+    max-width:850px;
+    height:500px;
+    margin:60px auto 0;
+    position:relative;
+    overflow:hidden;
+    border-radius:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
 
-<img src="water1.jpg">
+.hero-slider .slides{
+    width:100%;
+    height:100%;
+    position:relative;
+}
 
-</div>
+.hero-slider .slides img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    animation:fadeSlider 35s infinite;
+}
+
+/* รูปแต่ละรูป */
+
+.hero-slider .slides img:nth-child(1){
+    animation-delay:0s;
+}
+
+.hero-slider .slides img:nth-child(2){
+    animation-delay:5s;
+}
+
+.hero-slider .slides img:nth-child(3){
+    animation-delay:10s;
+}
+
+.hero-slider .slides img:nth-child(4){
+    animation-delay:15s;
+}
+
+.hero-slider .slides img:nth-child(5){
+    animation-delay:20s;
+}
+
+.hero-slider .slides img:nth-child(6){
+    animation-delay:25s;
+}
+
+.hero-slider .slides img:nth-child(7){
+    animation-delay:30s;
+}
+
+/* เอฟเฟกต์เปลี่ยนรูป */
+
+@keyframes fadeSlider{
+
+    0%{
+        opacity:0;
+    }
+
+    5%{
+        opacity:1;
+    }
+
+    14%{
+        opacity:1;
+    }
+
+    19%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+/* ปุ่มซ้ายขวา */
+
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.20);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    color:white;
+    z-index:10;
+    cursor:pointer;
+    transition:0.4s;
+    backdrop-filter:blur(6px);
+}
+
+/* ตอน hover */
+
+.slider-btn:hover{
+    background:rgba(255,255,255,0.9);
+    color:#0d6662;
+    transform:translateY(-50%) scale(1.1);
+}
+
+/* ตำแหน่ง */
+
+.slider-btn.left{
+    left:20px;
+}
+
+.slider-btn.right{
+    right:20px;
+}
+
+/* DROPDOWN HOVER */
+
+.dropdown a{
+    transition:0.3s;
+}
+
+/* ไฮไลท์เทา */
+
+.dropdown a:hover{
+    background:#d9d9d9;
+    color:#0d6662 !important;
+    padding-left:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-slider{
+    height:320px;
+}
+
+.slider-btn{
+    width:45px;
+    height:45px;
+    font-size:1.3rem;
+}
+
 }
