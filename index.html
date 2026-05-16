@@ -69,17 +69,17 @@
 
 <div class="hero-slider">
 
-<div class="slider-btn left">
+<div class="slider-btn left" onclick="prevSlide()">
 ❮
 </div>
 
-<div class="slider-btn right">
+<div class="slider-btn right" onclick="nextSlide()">
 ❯
 </div>
 
 <div class="slides">
 
-<img src="open1.jpg">
+<img src="open1.jpg" class="active">
 
 <img src="open5.jpg">
 
@@ -114,6 +114,60 @@
 </p>
 
 </footer>
+<script>
 
+const slides = document.querySelectorAll('.slides img');
+
+let currentSlide = 0;
+
+/* แสดงรูป */
+
+function showSlide(index){
+
+slides.forEach((slide)=>{
+slide.classList.remove('active');
+});
+
+slides[index].classList.add('active');
+
+}
+
+/* ปุ่มขวา */
+
+function nextSlide(){
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+
+showSlide(currentSlide);
+
+}
+
+/* ปุ่มซ้าย */
+
+function prevSlide(){
+
+currentSlide--;
+
+if(currentSlide < 0){
+currentSlide = slides.length - 1;
+}
+
+showSlide(currentSlide);
+
+}
+
+/* เปลี่ยนอัตโนมัติ */
+
+setInterval(()=>{
+
+nextSlide();
+
+},5000);
+
+</script>
 </body>
 </html>
